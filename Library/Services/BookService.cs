@@ -25,6 +25,7 @@ namespace Library.Services
 
             }catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return $"Something went wrong {ex.InnerException}";
             }
         }

@@ -27,6 +27,7 @@ namespace Library.Controllers
         [HttpPost]
         public async Task<ActionResult<ResponseDto>> AddBlog(BookDto book)
         {
+            Console.WriteLine(book);
             //Map it to blog
            Book newBook = _mapper.Map<Book>(book);
             string resp = await _bookService.CreateBook(newBook);
