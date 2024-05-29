@@ -17,11 +17,14 @@ namespace Library.Controllers
         private readonly IMapper _mapper;
 
         private readonly ResponseDto _responseDto;
-        public BookController(IBookService bookService, IMapper mapper)
+
+        private readonly IConfiguration _configuration;
+        public BookController(IBookService bookService, IMapper mapper,IConfiguration configuration)
         {
             _bookService = bookService;
             _mapper = mapper;
             _responseDto = new ResponseDto();
+             _configuration = configuration;
         }
 
         [HttpPost]

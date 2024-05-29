@@ -35,9 +35,7 @@ namespace AuthService.Services
 
         public  async Task<string> RegisterUser(RegisterUserDto userDto)
         {
-
             //check if user does exist 
-
             try
             {
                var user = _mapper.Map<User>(userDto);

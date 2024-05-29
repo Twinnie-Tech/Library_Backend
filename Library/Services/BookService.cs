@@ -1,6 +1,7 @@
 ﻿using Library.Data;
 using Library.Dto;
 using Library.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace Library.Services
 {
@@ -40,13 +41,13 @@ namespace Library.Services
         public async Task<List<Book>> GetBooks()
         {
        
-               List <Book> books =  _dbContext.Books.ToList();
+               List <Book> books = await _dbContext.Books.ToListAsync();
                 return books;
         }
 
         public async Task<Book> GetOneBook(Guid id)
         {
-           Book book = await  _dbContext.Books.FindAsync(id);
+           Book book = _dbContext.Books.Find(id);
             if(book != null)
             {
                 return book;
